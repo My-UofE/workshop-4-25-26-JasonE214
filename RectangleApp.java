@@ -6,7 +6,7 @@ public class RectangleApp {
 		
 		Rectangle myRect1; //myRect is not instantiated
 		myRect1 = new Rectangle(20.0, 8.0,30,30); //instantiated
-		
+		myRect1.scale(10);
 		//static field
 		System.out.println("Rectangle has " + Rectangle.NUMBER_OF_SIDES + " sides");
 		//instance fields
@@ -26,17 +26,29 @@ public class RectangleApp {
 		
 		System.out.println("Creating myRect2");
 		Rectangle myRect2 = new Rectangle(20.0, 8.0);
+		myRect2.scale(5, 10);
 		System.out.println("Width: "+myRect2.width+", Height: "+myRect2.height);
 		System.out.println("Origin: "+myRect2.originX+","+myRect2.originY);
 		
 
 
-		/*
+		
 		System.out.println("Creating myRect3");
 		Rectangle myRect3 = new Rectangle(); 
 		System.out.println("Width: "+myRect3.width+", Height: "+myRect3.height);
 		System.out.println("Origin: "+myRect3.originX+","+myRect3.originY);
-		 */
+		
+		Rectangle myRect4 = new Rectangle(30.0, 5.0, 10, 10); 
+		Rectangle myRect5 = new Rectangle(50.0, 20.0, 0, 0); 
+		Rectangle myRect6 = new Rectangle(20.0, 40.0, 500, 500); 
+
+		// myRect4 overlaps myRect5 so these should show as true
+		System.out.println( "myRect4 overlaps myRect5: " + myRect4.isOverlappedWith(myRect5) ) ; 
+		System.out.println( "myRect5 overlaps myRect4: " + myRect5.isOverlappedWith(myRect4) ) ;
+
+		// myRect4 does not overlap myRect6 so these should show as false
+		System.out.println( "myRect4 overlaps myRect6: " + myRect4.isOverlappedWith(myRect6) ) ;
+		System.out.println( "myRect6 overlaps myRect4: " + myRect6.isOverlappedWith(myRect4) ) ;
 
 	}
 }
